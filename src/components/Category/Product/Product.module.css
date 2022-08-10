@@ -2,9 +2,8 @@
     margin: 0 0 73px 0;
 }
 
-
 .description {
-    font-size: 1.125rem;
+    font-size: 1.125em;
     margin: 24px 0 0 0;
 }
 
@@ -16,4 +15,20 @@
 .productPrice {
     line-height: 29px;
     font-weight: 500;
+}
+
+.productBackground {
+    width: 354px;
+    height: 330px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stockText {
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #8D8F9A;
 }

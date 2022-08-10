@@ -1,0 +1,22 @@
+.currency {
+    display: inline-block;
+    width: 30px;
+    text-align: end;
+    font-weight: 500;
+    font-size: 1.125em;
+    margin: 0 10px 0 0;
+}
+
+.btnDropdown {
+    width: 9px;
+    height: 6px;
+    transition: .2s;
+}
+
+.container {
+    position: relative;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}

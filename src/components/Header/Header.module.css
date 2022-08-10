@@ -15,4 +15,6 @@
     position: absolute;
     max-width: 1187px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

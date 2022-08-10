@@ -6,36 +6,44 @@ class Product extends Component {
         super();
     }
 
-    componentDidMount() {
-        const { id, name, gallery, inStock, prices } = this.props;
-        console.log(id, name, gallery, inStock, prices);
-    }
+    // componentDidMount() {
+    //     const { id, name, gallery, inStock, prices } = this.props;
+    //     // console.log(id, name, gallery, inStock, prices);
+    // }
 
     render() {
-        const { item, productName, productPrice, description } = classes;
-        const { id, name, gallery, inStock, prices } = this.props;
+        const {
+            item,
+            productName,
+            productPrice,
+            description,
+            productBackground,
+            stockText,
+        } = classes;
+        const { id, name, gallery, inStock, prices, indexCurrency } =
+            this.props;
 
-        const imgStyle = {
-            width: '354px',
-            height: '330px',
+        const background = {
             backgroundImage: `url(${gallery[0]})`,
-            backgroundSize: '100% 100%',
-            backgroundRepeat: 'no-repeat',
             opacity: `${inStock ? null : '0.5'}`,
         };
 
-        const textStyle = {
+        const text = {
             color: `${!inStock ? '#8D8F9A' : '#1D1F22'}`,
         };
 
         return (
             <div className={item}>
-                <div style={imgStyle}></div>
-                <div style={textStyle} className={description}>
+                <div style={background} className={productBackground}>
+                    {!inStock ? (
+                        <p className={stockText}>OUT OF STOCK</p>
+                    ) : null}
+                </div>
+                <div style={text} className={description}>
                     <p className={productName}>{name}</p>
                     <p className={productPrice}>
-                        <span>{prices[0].currency.symbol}</span>
-                        {prices[0].amount}
+                        <span>{prices[indexCurrency].currency.symbol}</span>
+                        {prices[indexCurrency].amount}
                     </p>
                 </div>
             </div>

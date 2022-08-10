@@ -35,7 +35,7 @@ class Category extends Component {
     }
 
     render() {
-        const { name } = this.props;
+        const { name, indexCurrency } = this.props;
         const { products } = this.state;
         const { title, container } = classes;
 
@@ -45,7 +45,11 @@ class Category extends Component {
                 <div className={container}>
                     {products.length ? (
                         products.map((product) => (
-                            <Product {...product} key={product.id} />
+                            <Product
+                                {...product}
+                                indexCurrency={indexCurrency}
+                                key={product.id}
+                            />
                         ))
                     ) : (
                         <h1>Loading...</h1>

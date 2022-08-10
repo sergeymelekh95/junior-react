@@ -9,15 +9,19 @@ class NavMenu extends Component {
 
     render() {
         const { categories } = this.props;
-        const {navMenu, navList, navLink, active} = classes;
-        const checkActiveLink = navData => navData.isActive ? active : navLink;
+        const { navMenu, navList, navLink, active } = classes;
+        const checkActiveLink = (navData) =>
+            navData.isActive ? active : navLink;
 
         return (
             <nav className={navMenu}>
                 <ul className={navList}>
-                    {categories.map(({name}) => (
+                    {categories.map(({ name }) => (
                         <li key={name}>
-                            <NavLink to={`/${name}`} className={checkActiveLink}>
+                            <NavLink
+                                to={`/${name}`}
+                                className={checkActiveLink}
+                            >
                                 {name.toUpperCase()}
                             </NavLink>
                         </li>

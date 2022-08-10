@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #1D1F22;
+    font-size: 16px;
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 1187px;
+    width: 100%;
+}
+
+.main {
+    flex-grow: 1;
+}

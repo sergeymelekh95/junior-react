@@ -1,0 +1,19 @@
+.item {
+    margin: 0 0 73px 0;
+}
+
+
+.description {
+    font-size: 1.125rem;
+    margin: 24px 0 0 0;
+}
+
+.productName {
+    font-weight: 300;
+    line-height: 29px;
+}
+
+.productPrice {
+    line-height: 29px;
+    font-weight: 500;
+}

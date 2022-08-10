@@ -1,0 +1,18 @@
+.header {
+    height: 80px;
+    display: flex;
+    margin: 0 0 80px 0;
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 1187px;
+    width: 100%;
+}
+
+.headerRow {
+    margin: 28px 0 0 0;
+    position: absolute;
+    max-width: 1187px;
+    width: 100%;
+}

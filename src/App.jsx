@@ -7,6 +7,7 @@ import { getAllCategories } from './queries/getAllCategories';
 import { getCurrencies } from './queries/getCurrencies';
 
 import classes from './App.module.css';
+import { ProductInfo } from './components/Category/Product/ProductInfo/ProductInfo';
 
 class App extends Component {
     constructor() {
@@ -125,8 +126,12 @@ class App extends Component {
                                     : null}
                                 {/* Добавить двоеточие для динамики. а пока так */}
                                 <Route
-                                    path='/:category/product'
+                                    path='/:categoryName'
                                     element={<Product />}
+                                ></Route>
+                                <Route
+                                    path='/:categoryName/:productId'
+                                    element={<ProductInfo indexCurrency={indexCurrency} />}
                                 ></Route>
                             </Routes>
                         </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import { getProducts } from '../../queries/getProducts';
 import classes from './Category.module.css';
 import { Product } from './Product/Product';
@@ -40,22 +41,23 @@ class Category extends Component {
         const { title, container } = classes;
 
         return (
-            <>
+            <div>
                 <h1 className={title}>{name.toUpperCase()}</h1>
                 <div className={container}>
                     {products.length ? (
                         products.map((product) => (
-                            <Product
-                                {...product}
-                                indexCurrency={indexCurrency}
-                                key={product.id}
-                            />
+                            <NavLink key={product.id} to={`/${name}/${product.id}`}>
+                                <Product
+                                    {...product}
+                                    indexCurrency={indexCurrency}
+                                />
+                            </NavLink>
                         ))
                     ) : (
                         <h1>Loading...</h1>
                     )}
                 </div>
-            </>
+            </div>
         );
     }
 }

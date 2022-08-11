@@ -6,10 +6,10 @@ class Product extends Component {
         super();
     }
 
-    // componentDidMount() {
-    //     const { id, name, gallery, inStock, prices } = this.props;
-    //     // console.log(id, name, gallery, inStock, prices);
-    // }
+    componentDidMount() {
+        // const { id, name, gallery, inStock, prices } = this.props;
+        // console.log(id, name, gallery, inStock, prices);
+    }
 
     render() {
         const {
@@ -19,6 +19,7 @@ class Product extends Component {
             description,
             productBackground,
             stockText,
+            addBtn,
         } = classes;
         const { id, name, gallery, inStock, prices, indexCurrency } =
             this.props;
@@ -46,6 +47,15 @@ class Product extends Component {
                         {prices[indexCurrency].amount}
                     </p>
                 </div>
+                <button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        console.log('add to basket');
+                    }}
+                    disabled={!inStock}
+                    className={addBtn}
+                ></button>
             </div>
         );
     }
